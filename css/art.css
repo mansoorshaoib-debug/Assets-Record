@@ -1,0 +1,18 @@
+/* Flat illustrations used on folder tiles. Colours come from the active theme. */
+.art { width: 100%; height: 100%; display: block; overflow: visible; }
+
+.k-body { fill: var(--art-body); stroke: var(--art-edge); stroke-width: 3; stroke-linejoin: round; }
+.k-glass { fill: var(--art-glass); stroke: var(--art-edge); stroke-width: 2; stroke-linejoin: round; }
+.k-paper { fill: #fff; stroke: var(--art-edge); stroke-width: 2; stroke-linejoin: round; }
+.k-soft { fill: var(--art-soft); }
+.k-acc { fill: var(--art-accent); }
+.k-line { fill: none; stroke: var(--art-edge); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.k-accline { fill: none; stroke: var(--art-accent); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.k-shine { fill: #fff; opacity: .14; }
+.k-shadow { fill: var(--art-edge); opacity: .12; }
+
+/* Optional real photo: assets/images/<folder-name>.jpg replaces the drawing */
+.pic { position: relative; width: 100%; height: 100%; }
+.pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; border-radius: 10px; opacity: 0; }
+.pic.has-photo img { opacity: 1; }
+.pic.has-photo svg { visibility: hidden; }

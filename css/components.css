@@ -1,0 +1,41 @@
+/* Panels, badges, buttons, banner. */
+.panel {
+  background: var(--panel);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--line);
+  border-radius: var(--r-panel);
+}
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid var(--line-strong); border-radius: var(--r-ctl);
+  background: var(--hover);
+  font-weight: 600; text-decoration: none; cursor: pointer; white-space: nowrap;
+}
+.btn:hover { background: var(--hover-strong); }
+.btn svg { width: 16px; height: 16px; }
+
+.s-inuse { color: var(--s-inuse); }
+.s-instock { color: var(--s-instock); }
+.s-damaged { color: var(--s-damaged); }
+.s-broken { color: var(--s-broken); }
+.s-other { color: var(--s-disposed); }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 3px 10px 3px 8px;
+  border-radius: 999px;
+  background: var(--hover-strong);
+  font-size: 12.5px; font-weight: 600; white-space: nowrap;
+}
+.badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.badge span { color: var(--ink); }
+
+.banner {
+  margin-bottom: 22px; padding: 10px 14px;
+  border: 1px solid var(--banner-line); border-radius: 10px;
+  background: var(--banner-bg); color: var(--banner-ink);
+  font-size: 13px;
+}
+.banner.err { border-color: var(--danger-line); background: var(--danger-bg); color: var(--danger-ink); }

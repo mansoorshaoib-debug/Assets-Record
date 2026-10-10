@@ -1,0 +1,8 @@
+@media print {
+  body { background: #fff !important; color: #000; }
+  .bg-video, .bg-scrim, .top-tools, .banner, .back, .search { display: none !important; }
+  .topbar { position: static; background: #fff; border-color: #bbb; }
+  .panel, .stat, .records { background: #fff; border-color: #bbb; backdrop-filter: none; }
+  th { position: static; background: #eee; color: #000; }
+  td, .v, .l, h1, .brand-text b { color: #000 !important; }
+}

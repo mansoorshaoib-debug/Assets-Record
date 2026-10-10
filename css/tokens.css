@@ -1,0 +1,7 @@
+/* Shared design tokens (theme-independent). Colours live in css/themes/. */
+:root {
+  --font: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --r-panel: 16px;
+  --r-ctl: 9px;
+  --side-w: 232px;
+}

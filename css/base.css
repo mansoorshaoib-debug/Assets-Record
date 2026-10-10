@@ -1,0 +1,45 @@
+/* Reset, page background, video layer, focus. */
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+  background-color: var(--bg-color);
+  background-image: var(--wallpaper);
+  background-attachment: fixed;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.custom-wall { background-size: cover; background-position: center; }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Optional looping background video (see assets/video/README.md) */
+.bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.has-video .bg-video { opacity: 1; }
+
+.bg-scrim { position: fixed; inset: 0; z-index: -1; display: none; background: var(--scrim); pointer-events: none; }
+.has-video .bg-scrim { display: block; }
+
+h1 { margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -.025em; line-height: 1.1; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

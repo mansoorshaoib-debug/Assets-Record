@@ -1,0 +1,68 @@
+/* Theme: Corporate (blue and white, navy accents). Default theme. */
+[data-theme="corporate"] {
+  color-scheme: light;
+
+  --bg-color: #EAF1FB;
+  --wallpaper:
+    radial-gradient(1000px 640px at 92% -10%, rgba(37, 99, 235, .16), transparent 60%),
+    radial-gradient(900px 700px at -8% 8%, rgba(255, 255, 255, .95), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='8'%3E%3Crect width='1' height='8' fill='rgba(15,47,99,0.06)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #F6F9FE, #E3ECF8);
+  --scrim: linear-gradient(90deg, rgba(247, 250, 255, .86) 0%, rgba(247, 250, 255, .5) 38%, rgba(247, 250, 255, .12) 100%);
+
+  --wall-tint: rgba(240, 246, 255, .55);
+
+  --panel: rgba(255, 255, 255, .74);
+  --panel-solid: #FFFFFF;
+  --side-bg: linear-gradient(180deg, rgba(255, 255, 255, .9), rgba(244, 248, 254, .8));
+  --th-bg: #F0F5FC;
+  --field-bg: rgba(255, 255, 255, .92);
+  --toast-bg: #FFFFFF;
+
+  --line: rgba(15, 47, 99, .11);
+  --line-strong: rgba(15, 47, 99, .22);
+  --hover: rgba(15, 47, 99, .05);
+  --hover-strong: rgba(15, 47, 99, .09);
+  --track: rgba(15, 47, 99, .08);
+
+  --ink: #0B1F3A;
+  --muted: #566A88;
+  --faint: #8393AD;
+
+  --accent: #0F2F63;
+  --accent-hover: #17427F;
+  --accent-ink: #FFFFFF;
+  --focus: #2563EB;
+
+  --overlay: rgba(10, 25, 50, .45);
+  --shadow-modal: 0 30px 80px rgba(10, 25, 50, .28);
+
+  --banner-bg: rgba(37, 99, 235, .08);
+  --banner-line: rgba(37, 99, 235, .3);
+  --banner-ink: #1E3F7A;
+  --danger-ink: #B4233C;
+  --danger-line: rgba(220, 38, 70, .45);
+  --danger-bg: rgba(220, 38, 70, .08);
+
+  --s-inuse: #0E9F6E;
+  --s-instock: #2563EB;
+  --s-underrepair: #7C3AED;
+  --s-damaged: #D9730D;
+  --s-broken: #DC2646;
+  --s-disposed: #64748B;
+
+  --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23566A88' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  --sw: #0F2F63;
+
+  --folder-tab: #C6D9F4;
+  --folder-face: linear-gradient(180deg, #FFFFFF, #EDF3FC);
+  --art-body: #F3F7FD;
+  --art-edge: #0F2F63;
+  --art-glass: #1D4E9C;
+  --art-accent: #2F80ED;
+  --art-soft: #C9DBF5;
+
+  --stage: radial-gradient(circle at 50% 38%, #FFFFFF 0%, #E4EEFB 60%, #D5E3F6 100%);
+  --card-shadow: 0 10px 28px rgba(10, 25, 50, .14);
+  --s-other: #64748B;
+}

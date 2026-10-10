@@ -1,0 +1,61 @@
+/* Theme: Tech (near-black blue, cyan accent, dotted grid). Default theme. */
+:root,
+[data-theme="tech"] {
+  color-scheme: dark;
+
+  --bg-color: #050B14;
+  --wallpaper:
+    radial-gradient(1100px 650px at 90% -12%, rgba(34, 211, 238, .16), transparent 62%),
+    radial-gradient(900px 700px at -10% 30%, rgba(30, 90, 200, .18), transparent 62%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Ccircle cx='2' cy='2' r='1.1' fill='rgba(160,215,240,0.10)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #060E19, #040912);
+  --scrim: linear-gradient(90deg, rgba(4, 9, 18, .85) 0%, rgba(4, 9, 18, .5) 40%, rgba(4, 9, 18, .2) 100%);
+  --wall-tint: rgba(4, 9, 18, .6);
+
+  --panel: rgba(10, 21, 36, .74);
+  --panel-solid: #0C1828;
+  --side-bg: linear-gradient(180deg, rgba(6, 13, 24, .88), rgba(6, 13, 24, .7));
+  --th-bg: #0A1626;
+  --field-bg: rgba(4, 10, 19, .7);
+
+  --line: rgba(125, 211, 232, .13);
+  --line-strong: rgba(125, 211, 232, .26);
+  --hover: rgba(125, 211, 232, .06);
+  --hover-strong: rgba(125, 211, 232, .12);
+  --track: rgba(125, 211, 232, .09);
+
+  --ink: #E7F2F9;
+  --muted: #86A0B3;
+  --faint: #587084;
+
+  --accent: #22D3EE;
+  --accent-hover: #5FE1F4;
+  --accent-ink: #02202A;
+  --focus: #22D3EE;
+
+  --banner-bg: rgba(34, 211, 238, .08);
+  --banner-line: rgba(34, 211, 238, .35);
+  --banner-ink: #B7ECF7;
+  --danger-ink: #FCA5A5;
+  --danger-line: rgba(248, 113, 113, .5);
+  --danger-bg: rgba(248, 113, 113, .12);
+
+  --s-inuse: #22D3EE;
+  --s-instock: #34D399;
+  --s-damaged: #FB923C;
+  --s-broken: #F87171;
+  --s-other: #7C8EA0;
+
+  --sw: #071423;
+
+  --folder-tab: #123A4B;
+  --folder-face: linear-gradient(180deg, #0F2033, #0A1523);
+  --stage: radial-gradient(circle at 50% 38%, #15405A 0%, #0A1D2F 55%, #07121F 100%);
+  --card-shadow: 0 14px 34px rgba(0, 0, 0, .45);
+
+  --art-body: #1C3248;
+  --art-edge: #7DD3E8;
+  --art-glass: #06121E;
+  --art-accent: #22D3EE;
+  --art-soft: #2C4C68;
+}

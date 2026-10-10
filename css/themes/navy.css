@@ -1,0 +1,68 @@
+/* Theme: Navy (deep corporate blue, white text, sky-blue accent). */
+[data-theme="navy"] {
+  color-scheme: dark;
+
+  --bg-color: #0A2147;
+  --wallpaper:
+    radial-gradient(1000px 700px at 90% -12%, rgba(90, 176, 255, .26), transparent 62%),
+    radial-gradient(900px 700px at -8% 20%, rgba(30, 90, 200, .38), transparent 62%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='8'%3E%3Crect width='1' height='8' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #0C2A58, #08193A);
+  --scrim: linear-gradient(90deg, rgba(8, 25, 58, .82) 0%, rgba(8, 25, 58, .5) 40%, rgba(8, 25, 58, .2) 100%);
+
+  --wall-tint: rgba(8, 25, 58, .6);
+
+  --panel: rgba(12, 38, 82, .66);
+  --panel-solid: #0E2B5C;
+  --side-bg: linear-gradient(180deg, rgba(7, 22, 52, .84), rgba(7, 22, 52, .6));
+  --th-bg: #0C2756;
+  --field-bg: rgba(5, 18, 44, .6);
+  --toast-bg: #12326A;
+
+  --line: rgba(255, 255, 255, .11);
+  --line-strong: rgba(255, 255, 255, .2);
+  --hover: rgba(255, 255, 255, .06);
+  --hover-strong: rgba(255, 255, 255, .11);
+  --track: rgba(255, 255, 255, .07);
+
+  --ink: #EEF4FF;
+  --muted: #9DB6DC;
+  --faint: #7B93BC;
+
+  --accent: #5AB0FF;
+  --accent-hover: #7BC0FF;
+  --accent-ink: #04223F;
+  --focus: #7BC0FF;
+
+  --overlay: rgba(3, 10, 26, .66);
+  --shadow-modal: 0 30px 80px rgba(0, 0, 0, .55);
+
+  --banner-bg: rgba(90, 176, 255, .12);
+  --banner-line: rgba(90, 176, 255, .4);
+  --banner-ink: #CFE5FF;
+  --danger-ink: #FFB3BC;
+  --danger-line: rgba(255, 91, 110, .5);
+  --danger-bg: rgba(255, 91, 110, .16);
+
+  --s-inuse: #3DD6A0;
+  --s-instock: #5AB0FF;
+  --s-underrepair: #B49BFF;
+  --s-damaged: #FF9A5B;
+  --s-broken: #FF5B6E;
+  --s-disposed: #7F8DA6;
+
+  --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239DB6DC' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  --sw: #0A2147;
+
+  --folder-tab: #1F4C91;
+  --folder-face: linear-gradient(180deg, rgba(36, 86, 160, .9), rgba(15, 50, 104, .92));
+  --art-body: #2A5CA6;
+  --art-edge: #BFDDFF;
+  --art-glass: #0A2147;
+  --art-accent: #5AB0FF;
+  --art-soft: #4A7CC4;
+
+  --stage: radial-gradient(circle at 50% 38%, #2F6BC0 0%, #174482 58%, #0F3068 100%);
+  --card-shadow: 0 14px 34px rgba(0, 0, 0, .4);
+  --s-other: #7F8DA6;
+}

@@ -1,0 +1,72 @@
+/* Home page: totals, section heading and folder tiles. */
+.totals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 38px; }
+.total { position: relative; padding: 18px 20px 16px; overflow: hidden; }
+.total::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--c, var(--accent)); }
+.total .l { color: var(--muted); font-size: 13px; font-weight: 600; }
+.total .v { margin-top: 6px; color: var(--ink); font-size: 34px; font-weight: 800; letter-spacing: -.03em; line-height: 1.05; }
+.total .n { margin-top: 4px; color: var(--muted); font-size: 12.5px; }
+
+.section-head { margin-bottom: 20px; }
+.section-head h2 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
+.section-head p { margin: 4px 0 0; color: var(--muted); }
+
+.folders { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 30px 24px; }
+
+.folder {
+  position: relative;
+  display: block;
+  padding-top: 22px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform .18s ease;
+}
+.folder:hover { transform: translateY(-5px); }
+.folder:focus-visible { outline: none; }
+.folder:focus-visible .folder-face { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+/* tab on the back edge: this is what makes the tile read as a folder */
+.folder::before {
+  content: "";
+  position: absolute; top: 0; left: 0;
+  width: 42%; height: 38px;
+  border-radius: 13px 13px 0 0;
+  background: var(--folder-tab);
+}
+
+.folder-face {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 0 18px 18px 18px;
+  background: var(--folder-face);
+  box-shadow: var(--card-shadow);
+  transition: border-color .18s ease;
+}
+.folder:hover .folder-face { border-color: var(--accent); }
+
+.stage { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 10.5; background: var(--stage); }
+.stage .pic { width: 66%; height: auto; aspect-ratio: 4 / 3; }
+.stage { overflow: hidden; }
+.stage .pic.has-photo { position: absolute; inset: 0; width: 100%; height: 100%; }
+.stage .pic.has-photo img { object-fit: cover; border-radius: 0; }
+
+.folder-name { position: absolute; left: 12px; top: 12px; padding: 3px 10px; border-radius: 999px; background: rgba(0, 0, 0, .45); color: #fff; font-size: 12px; font-weight: 700; backdrop-filter: blur(6px); }
+
+.tile-body { padding: 14px 16px 16px; }
+.tile-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.tile-stat .l { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 12px; font-weight: 600; }
+.tile-stat .l i { display: block; width: 7px; height: 7px; border-radius: 2px; background: currentColor; }
+.tile-stat .v { margin-top: 1px; color: var(--ink); font-size: 20px; font-weight: 800; letter-spacing: -.02em; }
+.tile-bar { display: flex; gap: 2px; height: 6px; margin-top: 12px; border-radius: 3px; overflow: hidden; background: var(--track); }
+.tile-bar span { display: block; }
+
+.tile-open {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 14px; padding: 9px 12px;
+  border: 1px solid var(--line-strong); border-radius: var(--r-ctl);
+  color: var(--ink); font-size: 13px; font-weight: 700;
+}
+.folder:hover .tile-open { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.tile-open svg { width: 15px; height: 15px; }
+
+.tile-note { margin-top: 12px; color: var(--muted); font-size: 12.5px; }
