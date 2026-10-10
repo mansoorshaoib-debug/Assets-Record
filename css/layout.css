@@ -66,3 +66,13 @@
 .main { max-width: 1240px; margin: 0 auto; padding: 30px 28px 64px; }
 .loading, .state { display: grid; place-items: center; min-height: 40vh; color: var(--muted); text-align: center; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+
+/* header: only show the sync chip when something needs attention */
+.sync:not(.err):not(.demo) { display: none; }
+
+/* first visit, before the sheet answers: numbers stay hidden instead of showing a spinner */
+.is-loading .tile-stat .v, .is-loading .total .v, .is-loading .total .n { color: transparent; background: var(--track); border-radius: 6px; width: 3ch; height: 1em; }
+.is-loading .total .n { width: 12ch; }
+.is-loading .tile-bar { visibility: hidden; }
+.is-loading a.folder { pointer-events: none; }

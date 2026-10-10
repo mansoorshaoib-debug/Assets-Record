@@ -8,6 +8,8 @@
   <script src="js/theme-boot.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://script.google.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
 
   <link rel="stylesheet" href="css/tokens.css">
@@ -34,20 +36,13 @@
       </a>
 
       <div class="top-tools">
-        <span class="sync" id="sync"><i></i><span id="syncText">Loading…</span></span>
-        <span class="readonly">Read-only</span>
+        <span class="sync" id="sync"><i></i><span id="syncText"></span></span>
         <a class="btn" id="sheetLink" target="_blank" rel="noopener" hidden>Open Google Sheet</a>
-        <button class="icon-btn" id="refresh" aria-label="Refresh data" title="Refresh"></button>
-        <div class="themes" role="group" aria-label="Theme">
-          <button class="swatch" style="--sw:#071423" data-theme-set="tech" aria-label="Tech theme" title="Tech" aria-pressed="false"></button>
-          <button class="swatch" style="--sw:#F3F7FD" data-theme-set="corporate" aria-label="Corporate theme" title="Corporate" aria-pressed="false"></button>
-          <button class="swatch" style="--sw:#0F3068" data-theme-set="navy" aria-label="Navy theme" title="Navy" aria-pressed="false"></button>
-        </div>
       </div>
     </div>
   </header>
 
-  <main class="main" id="main"><div class="loading">Loading records…</div></main>
+  <main class="main" id="main"></main>
 
   <script src="js/config.js"></script>
   <script src="js/demo-data.js"></script>

@@ -15,7 +15,23 @@
     }));
   }
 
+  const CACHE_KEY = 'oth_data_v1';
+
   AR.api = {
+    /** Last good copy of the sheet, so the page can draw instantly while the fresh data loads. */
+    loadCached() {
+      if (!AR.CONFIG.SCRIPT_URL) return false;
+      try {
+        const c = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+        if (!c || !Array.isArray(c.folders) || !c.folders.length) return false;
+        S.live = true;
+        S.folders = normalize(c.folders);
+        S.fetchedAt = c.at || Date.now();
+        S.error = '';
+        return true;
+      } catch (e) { return false; }
+    },
+
     async load() {
       const { SCRIPT_URL, READ_KEY } = AR.CONFIG;
 
@@ -32,6 +48,7 @@
       const data = await res.json();
       if (!data.ok) throw new Error(data.error || 'Could not read the sheet');
 
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ at: Date.now(), folders: data.folders })); } catch (e) { /* storage full or blocked */ }
       S.live = true;
       S.folders = normalize(data.folders);
       S.fetchedAt = Date.now();

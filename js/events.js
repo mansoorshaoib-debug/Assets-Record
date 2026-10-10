@@ -3,11 +3,9 @@
   const S = AR.state;
 
   function onClick(e) {
-    const t = e.target.closest('[data-theme-set],[data-tab],[data-sort],[data-act],#refresh');
+    const t = e.target.closest('[data-tab],[data-sort],[data-act]');
     if (!t) return;
 
-    if (t.dataset.themeSet) return AR.theme.set(t.dataset.themeSet);
-    if (t.id === 'refresh') return AR.refresh(true);
     if (t.dataset.tab) { S.tab = t.dataset.tab; return AR.render(); }
     if (t.dataset.sort) {
       if (S.sort.k === t.dataset.sort) S.sort.d *= -1; else S.sort = { k: t.dataset.sort, d: 1 };

@@ -7,7 +7,8 @@
   function renderSync() {
     const el = U.$('#sync');
     let cls = 'sync', text;
-    if (S.error) { cls += ' err'; text = 'Could not refresh, showing last data'; }
+    if (S.loading) { /* hidden by css until data arrives */ }
+    else if (S.error) { cls += ' err'; text = 'Could not refresh, showing last data'; }
     else if (!S.live) { cls += ' demo'; text = 'Demo data, sheet not linked'; }
     else { text = `Synced with Google Sheets · ${U.timeAgo(S.fetchedAt)}`; }
     el.className = cls;
@@ -24,7 +25,15 @@
     const main = U.$('#main');
     renderSync();
 
-    if (S.loading) { main.innerHTML = '<div class="loading">Loading records…</div>'; return; }
+    if (S.loading) {
+      // no saved data yet: draw the folder tiles right away, numbers fill in a moment later
+      const keep = S.folders;
+      S.folders = AR.DEMO.folders.map(f => ({ name: f.name, slug: U.slug(f.name), kind: /purchase/i.test(f.name) ? 'purchases' : 'items', columns: [], rows: [] }));
+      main.innerHTML = '<div class="is-loading">' + AR.views.home() + '</div>';
+      S.folders = keep;
+      AR.art.hydrate(main);
+      return;
+    }
     if (S.error && !S.folders.length) {
       main.innerHTML = `<div class="state"><div><b>Could not read the Google Sheet.</b><p>${U.esc(S.error)}</p>
         <p>Check the web app URL in js/config.js and that access is set to Anyone.</p></div></div>`;
@@ -51,17 +60,17 @@
   };
 
   /* ---------- data ---------- */
-  AR.refresh = async function (manual) {
-    const btn = U.$('#refresh');
-    btn.classList.add('spin');
+  AR.refresh = async function () {
+    const before = JSON.stringify(S.folders.map(f => f.rows)) + S.error + S.loading;
     try {
       await AR.api.load();
     } catch (err) {
       S.error = err.message || String(err);
     }
     S.loading = false;
-    btn.classList.remove('spin');
-    AR.render();
+    // redraw only when something changed, so the page never flickers
+    const after = JSON.stringify(S.folders.map(f => f.rows)) + S.error + S.loading;
+    if (before !== after) AR.render(); else renderSync();
   };
 
   function startAutoRefresh() {
@@ -69,7 +78,7 @@
     if (!seconds || !AR.CONFIG.SCRIPT_URL) return;
     setInterval(() => { if (document.visibilityState === 'visible') AR.refresh(); }, seconds * 1000);
     document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible' && Date.now() - S.fetchedAt > 15000) AR.refresh();
+      if (document.visibilityState === 'visible' && Date.now() - S.fetchedAt > 2000) AR.refresh();
     });
   }
 
@@ -83,7 +92,7 @@
     const csv = [cols.map(cell).join(',')].concat(rows.map(r => cols.map(c => cell(r[c])).join(','))).join('\r\n');
 
     const link = document.createElement('a');
-    link.href = URL.createObjectURL(new Blob(['﻿' + csv], { type: 'text/csv' }));
+    link.href = URL.createObjectURL(new Blob(['\ufeff' + csv], { type: 'text/csv' }));
     link.download = `${folder.slug}-${new Date().toISOString().slice(0, 10)}.csv`;
     link.click();
     URL.revokeObjectURL(link.href);
@@ -91,6 +100,7 @@
 
   AR.start = async function () {
     parseRoute();
+    if (AR.api.loadCached()) S.loading = false;   // show the last saved data at once
     AR.render();
     await AR.refresh();
     startAutoRefresh();
