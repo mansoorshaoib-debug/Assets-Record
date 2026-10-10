@@ -5,7 +5,7 @@
    ===================================================================== */
 window.AR = {
   CONFIG: {
-    SCRIPT_URL:'https://script.google.com/macros/s/AKfycbwTPczekRSWE7FbXPQ61Pd9icMpHEifEBelQxC7JpYK686RfQHzE_OSS2vfrxbw8orM/exec',
+    SCRIPT_URL:'https://script.google.com/macros/s/AKfycbzfCX4xPqLRinlfoTCp44IIU7rWxfo4YWSf0kFPJvbZVlZDAAClSE1fCLvAcbxhQFXI/exec',
     READ_KEY: '',                    // only if you set READ_KEY in Code.gs
     SHEET_URL: '',                   // link for the "Open Google Sheet" button (optional)
     REFRESH_SECONDS: 60,             // how often the page re-reads the sheet
